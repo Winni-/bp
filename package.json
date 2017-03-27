@@ -1,0 +1,23 @@
+{
+  "name": "puNameHere",
+  "title": "Put title here",
+  "author": "Mikhail Pavlov",
+  "url": "https://github.com/Winni-/url",
+  "version": "1.0.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Winni-/url.git"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.0",
+    "browser-sync": "^2.18.8",
+    "gulp-babel": "^6.1.2",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.4.1",
+    "gulp-sprite-generator": "^0.2.3",
+    "gulp-uglify": "^2.1.2"
+  }
+}
