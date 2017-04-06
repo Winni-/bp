@@ -5,11 +5,7 @@ var gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     cssnano = require('gulp-cssnano'),
     rename = require('gulp-rename'),
-    babel = require('gulp-babel'),
-    gulpif = require('gulp-if'),
-    sprity = require('sprity'),
-    spritySass = require('sprity-sass'),
-    tmp = require('sprity-lwip');
+    babel = require('gulp-babel');
 
 
 gulp.task('css', function () {
@@ -52,20 +48,9 @@ gulp.task('bs-reload', function () {
     browserSync.reload();
 });
 
-gulp.task('sprites', function () {
-  return sprity.src({
-    src: './src/img/sprites/**/*.{png,jpg}',
-    style: './src/sass/modules/sprite.scss', 
-    split: true,
-    processor: 'sass', // make sure you have installed sprity-sass 
-  })
-  .pipe(gulpif('*.png', gulp.dest('./dist/assets/img/')))
-});
 
-
-gulp.task('default', ['css', 'js', 'html', 'browser-sync', 'sprites'], function () {
+gulp.task('default', ['css', 'js', 'html', 'browser-sync'], function () {
     gulp.watch("src/sass/**/*.scss", ['css']);
     gulp.watch("src/js/*.js", ['js']);
-    gulp.watch("./src/img/sprites/**/*.{png,jpg}", ['sprites']);
     gulp.watch("src/*.html", ['html','bs-reload']);
 });
